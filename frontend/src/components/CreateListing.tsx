@@ -24,6 +24,7 @@ import {
   ReadinessResponse
 } from '../types';
 import { api } from '../api';
+import { Logo } from './Logo';
 
 interface CreateListingProps {
   initialInput?: ProductInput | null;
@@ -248,11 +249,11 @@ ${generatedResult.alternative_titles.map((t) => `• ${t}`).join('\n')}
       {/* Header & Preset Switcher */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-indigo-600" />
+          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2.5">
+            <Logo variant="icon" size="sm" />
             <span>Create AI Product Listing</span>
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs text-slate-500 mt-1">
             Powered by open-weight AI (<span className="font-mono text-indigo-700">{readiness?.ai_model || 'gemma3:1b'}</span>) with strict factuality enforcement.
           </p>
         </div>

@@ -14,6 +14,8 @@ import {
   Check
 } from 'lucide-react';
 import { ListingDocument, ReadinessResponse, SamplePreset } from '../types';
+import { SiteBanner } from './SiteBanner';
+import { Logo } from './Logo';
 
 interface DashboardProps {
   listings: ListingDocument[];
@@ -38,41 +40,12 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
   return (
     <div className="space-y-8 max-w-7xl mx-auto pb-12">
-      {/* Hero Welcome Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-900 via-indigo-800 to-purple-900 text-white p-8 sm:p-10 shadow-xl shadow-indigo-950/10">
-        <div className="relative z-10 max-w-2xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium text-indigo-200">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-300" />
-            <span>Open-Weight AI • Gemma 3 Powered</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-            Transform product specs into professional ecommerce listings.
-          </h1>
-          <p className="text-indigo-200 text-base leading-relaxed">
-            Generate SEO titles, compelling descriptions, search tags, and social captions with strict factuality. Built for Etsy artisans, eBay sellers, Instagram boutiques, and local retailers.
-          </p>
-          <div className="pt-2 flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => onNavigateTab('create')}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-indigo-900 hover:bg-indigo-50 font-semibold shadow-md transition-all transform hover:-translate-y-0.5"
-            >
-              <PlusCircle className="w-5 h-5 text-indigo-700" />
-              <span>Create New Listing</span>
-            </button>
-            <button
-              onClick={() => onNavigateTab('saved')}
-              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-indigo-800/60 hover:bg-indigo-800/90 text-white border border-indigo-700/50 text-sm font-medium transition-all"
-            >
-              <FileText className="w-4 h-4" />
-              <span>Browse Saved ({listings.length})</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Decorative background glow */}
-        <div className="absolute right-0 top-0 -mt-10 -mr-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute right-1/4 bottom-0 -mb-20 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
-      </div>
+      {/* Unified Site Hero Banner */}
+      <SiteBanner
+        onNavigateTab={onNavigateTab}
+        readiness={readiness}
+        savedCount={listings.length}
+      />
 
       {/* Overview Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

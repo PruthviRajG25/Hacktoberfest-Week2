@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { ReadinessResponse } from '../types';
 import { api } from '../api';
+import { Logo } from './Logo';
 
 interface SettingsViewProps {
   readiness: ReadinessResponse | null;
@@ -57,9 +58,9 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ readiness, onRefresh
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Settings className="w-5 h-5 text-indigo-600" />
-            <span>System Settings & Architecture</span>
+          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2.5">
+            <Logo variant="icon" size="sm" />
+            <span>System Settings &amp; Architecture</span>
           </h1>
           <p className="text-xs text-slate-500 mt-1">
             Diagnostics for local open-weight inference, MongoDB Atlas integration, and Render deployment modes.

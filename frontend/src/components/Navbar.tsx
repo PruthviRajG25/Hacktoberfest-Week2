@@ -9,8 +9,10 @@ import {
   Database,
   Cpu,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  Image as ImageIcon
 } from 'lucide-react';
+import { Logo } from './Logo';
 import { ReadinessResponse } from '../types';
 
 interface NavbarProps {
@@ -29,6 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, setCurrentTab, readi
     { id: 'create', label: 'Create Listing', icon: PlusCircle },
     { id: 'saved', label: 'Saved Listings', icon: BookmarkCheck },
     { id: 'brand', label: 'Brand Profile', icon: Palette },
+    { id: 'logo', label: 'Logo & Banner', icon: ImageIcon },
     { id: 'settings', label: 'Settings', icon: Settings },
   ];
 
@@ -36,20 +39,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, setCurrentTab, readi
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo & Product Brand */}
-          <div className="flex items-center gap-3 cursor-pointer" onClick={() => setCurrentTab('dashboard')}>
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-700 via-indigo-600 to-purple-600 flex items-center justify-center shadow-md shadow-indigo-200">
-              <Sparkles className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-lg tracking-tight text-slate-900">Open List</span>
-                <span className="text-[10px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200/60">
-                  Open-Weight AI
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 hidden sm:block">Ecommerce Listing Generator</p>
-            </div>
+          {/* Unified Logo & Product Brand */}
+          <div className="flex items-center cursor-pointer">
+            <Logo
+              variant="horizontal"
+              size="md"
+              showBadge={true}
+              onClick={() => setCurrentTab('dashboard')}
+            />
           </div>
 
           {/* Navigation Items */}

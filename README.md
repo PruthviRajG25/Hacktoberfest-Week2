@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="frontend/public/banner.svg" alt="Open List Banner" width="100%" />
+</p>
+
 # Open List 🛍️✨
 ### AI-Powered Ecommerce Listing Generator Powered by Open-Weight Models & MongoDB Atlas
 
@@ -120,6 +124,12 @@ VECTOR_SEARCH_INDEX_NAME=vector_index
 ```
 *(If `MONGODB_URI` is left blank, Open List operates in resilient in-memory mode so you can test immediately without credentials).*
 
+The application automatically seeds four demo listings on startup: a ceramic mug,
+soy candle, leather cardholder, and bamboo matcha whisk. With no MongoDB URI,
+these records are available for the current run in in-memory mode. With a valid
+MongoDB URI, they are inserted into the `open_list_db.listings` collection only
+if those sample IDs do not already exist.
+
 ### 3. Install Backend Dependencies
 ```powershell
 pip install -r requirements.txt
@@ -134,10 +144,18 @@ cd ..
 ```
 
 ### 5. Launch the Application
-Run the unified FastAPI server:
+The backend serves the compiled frontend, so the application can be built and started from one terminal:
 ```powershell
-uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
+npm run start
 ```
+
+Run that command from the repository root. It builds `frontend/dist` and then starts the FastAPI server.
+
+To rebuild only the frontend:
+```powershell
+npm run build
+```
+
 Open your browser at:
 - **Application Interface**: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 - **Interactive Swagger API Docs**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)

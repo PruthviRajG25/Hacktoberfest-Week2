@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="fav-bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="60%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#9333ea" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#fav-bg)" />
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1" />
+  
+  <!-- Mini Tag & List Silhouette -->
+  <path d="M10 11C10 9.89543 10.8954 9 12 9H18.5858C19.1163 9 19.625 9.21071 20 9.58579L22.4142 12C22.7893 12.375 23 12.8837 23 13.4142V21C23 22.1046 22.1046 23 21 23H12C10.8954 23 10 22.1046 10 21V11Z" fill="#ffffff" />
+  <circle cx="14.5" cy="12.5" r="1.5" fill="#7c3aed" />
+  <rect x="12" y="16" width="9" height="1.6" rx="0.8" fill="#6366f1" />
+  <rect x="12" y="19" width="7" height="1.6" rx="0.8" fill="#818cf8" />
+  <!-- Sparkle Accent -->
+  <path d="M24 5C24 7.5 22 9.5 19.5 9.5C22 9.5 24 11.5 24 14C24 11.5 26 9.5 28.5 9.5C26 9.5 24 7.5 24 5Z" fill="#38bdf8" />
+</svg>

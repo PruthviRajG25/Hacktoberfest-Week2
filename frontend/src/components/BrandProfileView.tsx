@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { BrandProfile } from '../types';
 import { api } from '../api';
+import { Logo } from './Logo';
 
 export const BrandProfileView: React.FC = () => {
   const [profile, setProfile] = useState<BrandProfile>({
@@ -110,8 +111,8 @@ export const BrandProfileView: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Palette className="w-5 h-5 text-indigo-600" />
+          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2.5">
+            <Logo variant="icon" size="sm" />
             <span>Seller Brand Profile</span>
           </h1>
           <p className="text-xs text-slate-500 mt-1">

@@ -1,0 +1,8 @@
+{
+  "name": "open-list",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix frontend run build",
+    "start": "npm run build && python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload"
+  }
+}

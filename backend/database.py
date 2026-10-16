@@ -412,6 +412,46 @@ class DatabaseManager:
                         "Handmade Full Grain Italian Leather Wallet - Ultra-Slim RFID Card Sleeve"
                     ]
                 }
+            },
+            {
+                "_id": "sample-bamboo-whisk",
+                "is_sample": True,
+                "ai_model_used": "gemma3:1b",
+                "created_at": datetime(2026, 10, 16, 11, 0, tzinfo=timezone.utc),
+                "updated_at": datetime(2026, 10, 16, 11, 0, tzinfo=timezone.utc),
+                "product_input": {
+                    "product_name": "100-Prong Golden Bamboo Chasen Matcha Whisk",
+                    "category": "Tea Accessories & Japanese Crafts",
+                    "features_and_specs": "Carved from a single piece of sustainable golden bamboo, 100 finely curved flexible prongs for frothing micro-foam, includes ceramic whisk keeper stand, 100% natural and food safe, no chemical treatments.",
+                    "price": 24.50,
+                    "currency": "USD",
+                    "target_audience": "Matcha lovers, Japanese tea ceremony practitioners, wellness enthusiasts",
+                    "brand_name": "Komorebi Tea Co.",
+                    "brand_voice": "Professional",
+                    "marketplace": "eBay",
+                    "output_language": "English"
+                },
+                "generated_listing": {
+                    "title": "Golden Bamboo Matcha Whisk - 100-Prong Traditional Chasen with Ceramic Keeper Stand",
+                    "description": "Create smooth, café-quality matcha at home with a traditional 100-prong chasen carved from sustainable golden bamboo. The finely curved tines whisk tea into a rich, creamy micro-foam without chemical treatments. A ceramic keeper stand helps the whisk dry in its natural shape between uses.",
+                    "highlights": [
+                        "Hand-carved from one piece of sustainable golden bamboo",
+                        "100 flexible prongs create smooth, creamy matcha foam",
+                        "Includes a ceramic whisk keeper stand for proper drying",
+                        "Made with natural, food-safe materials",
+                        "Ideal for daily matcha rituals and Japanese tea practice"
+                    ],
+                    "keywords": [
+                        "bamboo matcha whisk", "100 prong chasen", "traditional matcha tools",
+                        "Japanese tea ceremony", "matcha tea accessories", "ceramic whisk holder", "sustainable tea gift"
+                    ],
+                    "social_caption": "Your daily matcha ritual, made beautifully. 🍵 Whisk smooth, frothy bowls with our hand-carved 100-prong golden bamboo chasen, complete with a ceramic keeper. #MatchaMoment #TeaRitual #JapaneseTea #Chasen #WellnessAtHome",
+                    "call_to_action": "Bring a mindful matcha ritual home—add this traditional chasen set to your cart today.",
+                    "alternative_titles": [
+                        "Traditional 100-Prong Bamboo Chasen Matcha Whisk with Ceramic Stand",
+                        "Handcrafted Golden Bamboo Matcha Whisk Set for Smooth Tea Foam"
+                    ]
+                }
             }
         ]
 

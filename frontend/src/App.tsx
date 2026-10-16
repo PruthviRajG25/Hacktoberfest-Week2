@@ -6,6 +6,8 @@ import { SavedListings } from './components/SavedListings';
 import { BrandProfileView } from './components/BrandProfileView';
 import { SettingsView } from './components/SettingsView';
 import { ExportModal } from './components/ExportModal';
+import { LogoPage } from './components/LogoPage';
+import { Logo } from './components/Logo';
 import {
   ListingDocument,
   ProductInput,
@@ -152,6 +154,8 @@ export function App() {
 
         {currentTab === 'brand' && <BrandProfileView />}
 
+        {currentTab === 'logo' && <LogoPage />}
+
         {currentTab === 'settings' && (
           <SettingsView
             readiness={readiness}
@@ -170,21 +174,33 @@ export function App() {
         />
       )}
 
-      {/* Global Minimal Footer */}
+      {/* Global Minimal Footer with Unified Logo */}
       <footer className="border-t border-slate-200/80 bg-white py-6 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-slate-900">Open List</span>
-            <span>—</span>
-            <span>AI Product Listing Generator for Independent Sellers</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="flex items-center gap-3">
+            <Logo
+              variant="horizontal"
+              size="xs"
+              showTagline={false}
+              onClick={() => setCurrentTab('logo')}
+            />
+            <span className="hidden sm:inline text-slate-300">|</span>
+            <span className="hidden sm:inline">AI Product Listing Studio for Independent Sellers</span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
+            <button
+              onClick={() => setCurrentTab('logo')}
+              className="text-indigo-600 hover:text-indigo-800 font-medium transition-colors"
+            >
+              Logo &amp; Brand Assets
+            </button>
+            <span>•</span>
             <span>Model: <strong className="font-mono text-indigo-700">{readiness?.ai_model || 'gemma3:1b'}</strong></span>
             <span>•</span>
             <span>Persistence: <strong>{readiness?.database_type === 'mongodb_atlas' ? 'MongoDB Atlas' : 'In-Memory Store'}</strong></span>
             <span>•</span>
             <a href="/docs" target="_blank" rel="noreferrer" className="text-indigo-600 hover:underline">
-              Swagger API Docs
+              Swagger API
             </a>
           </div>
         </div>

@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { ListingDocument, GeneratedListing, ProductInput } from '../types';
 import { api } from '../api';
+import { Logo } from './Logo';
 
 interface SavedListingsProps {
   listings: ListingDocument[];
@@ -99,9 +100,9 @@ export const SavedListings: React.FC<SavedListingsProps> = ({
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Layers className="w-5 h-5 text-indigo-600" />
-            <span>Saved Listings & History</span>
+          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2.5">
+            <Logo variant="icon" size="sm" />
+            <span>Saved Listings &amp; History</span>
           </h1>
           <p className="text-xs text-slate-500 mt-1">
             Browse, search, edit, or export previously generated product listings.
@@ -193,7 +194,8 @@ export const SavedListings: React.FC<SavedListingsProps> = ({
 
       {/* Listings List */}
       {displayedListings.length === 0 ? (
-        <div className="bg-white p-12 rounded-2xl border border-dashed border-slate-200 text-center space-y-3">
+        <div className="bg-white p-12 rounded-2xl border border-dashed border-slate-200 text-center space-y-4 flex flex-col items-center justify-center">
+          <Logo variant="stacked" size="lg" />
           <p className="text-base font-semibold text-slate-700">No matching listings found</p>
           <p className="text-xs text-slate-500 max-w-sm mx-auto">
             {searchQuery

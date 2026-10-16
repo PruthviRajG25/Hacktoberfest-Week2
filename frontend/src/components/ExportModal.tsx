@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Download, Copy, Check, X, FileText, FileSpreadsheet, FileCode } from 'lucide-react';
 import { GeneratedListing, ProductInput } from '../types';
+import { Logo } from './Logo';
 
 interface ExportModalProps {
   isOpen: boolean;
@@ -113,8 +114,8 @@ ${listing.alternative_titles.map((t) => `• ${t}`).join('\n')}
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-xs p-4">
       <div className="bg-white rounded-3xl border border-slate-200/80 shadow-2xl max-w-md w-full p-6 space-y-5 animate-in fade-in zoom-in-95 duration-150">
         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-          <div className="flex items-center gap-2">
-            <Download className="w-5 h-5 text-indigo-600" />
+          <div className="flex items-center gap-2.5">
+            <Logo variant="icon" size="xs" />
             <h2 className="font-bold text-base text-slate-900">Export Product Listing</h2>
           </div>
           <button
